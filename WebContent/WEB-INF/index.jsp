@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="css/slick.css">
   <!-- style CSS -->
   <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400i,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500i,700" rel="stylesheet"> 
 </head>
 <body>
 	<!--::header part start::-->
@@ -461,7 +464,7 @@
     </footer>
     <!--::footer_part end::-->
     
-  <!-- jquery -->
+    <!-- jquery -->
   <script src="js/jquery-1.12.1.min.js"></script>
   <!-- popper js -->
   <script src="js/popper.min.js"></script>
