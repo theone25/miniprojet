@@ -1,56 +1,64 @@
 package beans;
 
-import java.util.HashMap;
+import java.sql.Date;
 
 public class Commande {
-	private int id,UserId;
-	private HashMap<Integer, Integer> commande;
-	private float totale;
+	private  int NUM_COM;
+	private int NUM_LIV;
+	private int ID;
+	private java.sql.Date DATE_COM;
+	private String ETAT_COM;
+	private String PAIEMENT;
 	
-	public Commande(int id, int userId, HashMap<Integer, Integer> commande, float totale) {
+	public int getNUM_COM() {
+		return NUM_COM;
+	}
+	public void setNUM_COM(int nUM_COM) {
+		NUM_COM = nUM_COM;
+	}
+	public int getNUM_LIV() {
+		return NUM_LIV;
+	}
+	public void setNUM_LIV(int nUM_LIV) {
+		NUM_LIV = nUM_LIV;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
+	public java.sql.Date getDATE_COM() {
+		return DATE_COM;
+	}
+	public void setDATE_COM(java.sql.Date dATE_COM) {
+		DATE_COM = dATE_COM;
+	}
+	public String getETAT_COM() {
+		return ETAT_COM;
+	}
+	public void setETAT_COM(String eTAT_COM) {
+		ETAT_COM = eTAT_COM;
+	}
+	public String getPAIEMENT() {
+		return PAIEMENT;
+	}
+	public void setPAIEMENT(String pAIEMENT) {
+		PAIEMENT = pAIEMENT;
+	}
+	
+	public Commande(int nUM_COM, int nUM_LIV, int iD, Date dATE_COM, String eTAT_COM, String pAIEMENT) {
 		super();
-		this.id = id;
-		UserId = userId;
-		this.commande = commande;
-		this.totale = totale;
+		NUM_COM = nUM_COM;
+		NUM_LIV = nUM_LIV;
+		ID = iD;
+		DATE_COM = dATE_COM;
+		ETAT_COM = eTAT_COM;
+		PAIEMENT = pAIEMENT;
 	}
 	
 	public Commande() {
 		
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getUserId() {
-		return UserId;
-	}
-
-	public void setUserId(int userId) {
-		UserId = userId;
-	}
-
-	public HashMap<Integer, Integer> getCommande() {
-		return commande;
-	}
-
-	public void setCommande(HashMap<Integer, Integer> commande) {
-		this.commande = commande;
-	}
-
-	public float getTotale() {
-		return totale;
-	}
-
-	public void setTotale(float totale) {
-		this.totale = totale;
-	}
-	
-	
 
 }
