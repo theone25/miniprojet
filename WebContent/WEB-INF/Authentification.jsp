@@ -127,7 +127,7 @@ input {
 	z-index: 2;
 }
 
-.container.right-panel-active .sign-in-container {
+#container.right-panel-active .sign-in-container {
 	transform: translateX(100%);
 }
 
@@ -138,7 +138,7 @@ input {
 	z-index: 1;
 }
 
-.container.right-panel-active .sign-up-container {
+#container.right-panel-active .sign-up-container {
 	transform: translateX(100%);
 	opacity: 1;
 	z-index: 5;
@@ -168,7 +168,7 @@ input {
 	z-index: 100;
 }
 
-.container.right-panel-active .overlay-container{
+#container.right-panel-active .overlay-container{
 	transform: translateX(-100%);
 }
 
@@ -188,7 +188,7 @@ input {
 	transition: transform 0.6s ease-in-out;
 }
 
-.container.right-panel-active .overlay {
+#container.right-panel-active .overlay {
   	transform: translateX(50%);
 }
 
@@ -211,7 +211,7 @@ input {
 	transform: translateX(-20%);
 }
 
-.container.right-panel-active .overlay-left {
+#container.right-panel-active .overlay-left {
 	transform: translateX(0);
 }
 
@@ -220,7 +220,7 @@ input {
 	transform: translateX(0);
 }
 
-.container.right-panel-active .overlay-right {
+#container.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
 
@@ -287,14 +287,21 @@ input {
     </header>
     <!-- Header part end-->
     
+   
+  
+  
     <!-- Authentification Part -->
     <section class="auth-section padding_top">
     
     <div class="container" id="container">
 		<div class="form-container sign-up-container">
 			<form action="#">
-				<h1>Create Account</h1>
-				<input type="text" placeholder="Name" />
+				<h3>Create Account</h3>
+				<div>
+					<input type="text" placeholder="Nom" />
+					<input type="text" placeholder="Prenom" />
+				</div>
+				<input type="date" placeholder="Date Naissance" />
 				<input type="email" placeholder="Email" />
 				<input type="password" placeholder="Password" />
 				<button>Sign Up</button>
@@ -302,7 +309,7 @@ input {
 		</div>
 		<div class="form-container sign-in-container">
 			<form action="#">
-				<h1>Sign in</h1>
+				<h3>Sign in</h3>
 				<input type="email" placeholder="Email" />
 				<input type="password" placeholder="Password" />
 				<a href="#">Forgot your password?</a>
