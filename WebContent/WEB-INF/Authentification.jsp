@@ -272,7 +272,7 @@ input {
                         <div class="hearer_icon d-flex">
                         	<!-- replace with login shit -->
                             <a href=""><i class="ti-heart"></i></a>
-                            <div class="dropdown cart">
+                            <div class="dropdown cart" style="margin: auto;">
                                 <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-cart-plus"></i>
