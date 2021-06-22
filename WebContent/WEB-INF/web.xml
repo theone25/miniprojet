@@ -30,4 +30,14 @@
         <url-pattern>/contact</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+       <servlet-name>AuthenticationServlet</servlet-name>
+       <servlet-class>servlets.AuthenticationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AuthenticationServlet</servlet-name>
+        <url-pattern>/authentication</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
