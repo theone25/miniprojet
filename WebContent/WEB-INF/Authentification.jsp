@@ -295,7 +295,7 @@ input {
     
     <div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="#">
+			<form method="post" action="/authentication?register">
 				<h3>Create Account</h3>
 				<div>
 					<input type="text" placeholder="Nom" />
@@ -308,7 +308,7 @@ input {
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form action="#">
+			<form method="post" action="/authentication?login">
 				<h3>Sign in</h3>
 				<input type="email" placeholder="Email" />
 				<input type="password" placeholder="Password" />

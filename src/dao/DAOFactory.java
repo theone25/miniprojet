@@ -1,5 +1,7 @@
 package dao;
 
+import java.sql.Connection;
+
 public class DAOFactory {
 	private static DAOFactory instance;
 
@@ -14,5 +16,8 @@ public class DAOFactory {
         super();
     }
 
-    
+    public UtilisateurDAO createUtilisateurDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new UtilisateurDAO(connection);
+    }
 }

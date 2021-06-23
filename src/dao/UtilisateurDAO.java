@@ -21,7 +21,6 @@ public class UtilisateurDAO {
 
     public Utilisateur findById(int id) {
         String sql = "SELECT * FROM utilisateur WHERE `ID`= ?";
-        Connection conn = null;
 
         try {
             PreparedStatement statement = getConnection().prepareStatement(sql);
