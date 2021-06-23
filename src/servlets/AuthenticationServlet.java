@@ -24,10 +24,12 @@ public class AuthenticationServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 if (request.getQueryString().equals("register")) {
 			 UtilisateurDAO newUser= DAOFactory.getInstance().createUtilisateurDAO();
-			 Utilisateur usr=new Utilisateur();
-			 newUser.add(null);
-		 }else {
 			 
+			 // remplir usr avec donnees
+			 Utilisateur usr=new Utilisateur();
+			 newUser.add(usr);
+		 }else {
+			 // this is for login 
 		 }
 	}
 
