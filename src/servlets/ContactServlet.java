@@ -6,6 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import beans.Utilisateur;
 
 /**
  * Servlet implementation class ContactServlet
@@ -16,6 +19,9 @@ public class ContactServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		 Utilisateur usr=(Utilisateur)session.getAttribute("session-user");
+		 request.setAttribute("user", usr);
 		request.getRequestDispatcher("WEB-INF/contact.jsp").forward(request, response);
 	}
 

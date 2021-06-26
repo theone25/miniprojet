@@ -75,8 +75,8 @@
 							          <span>Authentifier<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">Se connecter</a>
-							          <a class="dropdown-item" href="#">Creer un compte</a>
+							          <a class="dropdown-item" href="/authentication">Se connecter</a>
+							          <a class="dropdown-item" href="/authentication">Creer un compte</a>
 							        </div>
 							      </li>   
 							    </ul>
