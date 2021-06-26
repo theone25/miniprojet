@@ -1,3 +1,4 @@
+<%@page import="beans.Utilisateur"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -26,6 +27,14 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,300,400i,400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,500i,700" rel="stylesheet"> 
+
+
+<style>
+	.user-profile {
+  color: #5E6974 !important;
+}
+
+</style>
 </head>
 <body>
 	<!--::header part start::-->
@@ -55,14 +64,52 @@
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
+	                       <div class="collapse navbar-collapse" id="navbar-list-4">
+	                       <%
+						        Utilisateur user = (Utilisateur)request.getAttribute("user");
+						        if(user==null)  {
+						    %>            
+						        <ul class="navbar-nav">
+							        <li class="nav-item dropdown">
+							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							          <span>Authentifier<i class="fas fa-user"></i></span>
+							        </a>
+							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							          <a class="dropdown-item" href="#">Se connecter</a>
+							          <a class="dropdown-item" href="#">Creer un compte</a>
+							        </div>
+							      </li>   
+							    </ul>
+						    <%
+						        } else {
+						    %>
+						        <ul class="navbar-nav">
+							        <li class="nav-item dropdown">
+							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
+							        </a>
+							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">mon profile</a>
+							          <a class="dropdown-item" href="#">deconnecter</a>
+							        </div>
+							      </li>   
+							    </ul>
+						    <%
+						        }
+						    %>
+							    <ul class="navbar-nav">
+							    <div class="dropdown cart">
+	                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+	                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                    <i class="fas fa-cart-plus"></i>
+	                                </a>
+	                            </div>
+							    </ul>
+							  </div>
                         	<!-- replace with login shit -->
-                            <a href=""><i class="ti-heart"></i></a>
-                            <div class="dropdown cart">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-cart-plus"></i>
-                                </a>
-                            </div>
+                            
+                            
                         </div>
                     </nav>
                 </div>

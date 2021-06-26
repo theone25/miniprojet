@@ -19,17 +19,18 @@ public class UtilisateurDAO {
         return connection;
     }
 
-    public Utilisateur findById(int id) {
-        String sql = "SELECT * FROM utilisateur WHERE `ID`= ?";
+    public Utilisateur findUser(String login, String pwd) {
+        String sql = "SELECT `ID`, `NOM`, `PRENOM`, `DATE_NAIS`, `LOGIN`, `PWD` FROM utilisateur WHERE `LOGIN`=? and `PWD`=?";
 
         try {
             PreparedStatement statement = getConnection().prepareStatement(sql);
 
-            statement.setInt(1, id);
+            statement.setString(1, login);
+            statement.setString(2, pwd);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
-            	Utilisateur user = new Utilisateur(rs.getInt("ID"), rs.getString("NOM"), rs.getString("PRENOM"),Date.valueOf(rs.getString("PRENOM")),rs.getString("LOGIN"),"");
+            	Utilisateur user = new Utilisateur(rs.getInt("ID"), rs.getString("NOM"), rs.getString("PRENOM"),Date.valueOf(rs.getString("DATE_NAIS")),rs.getString("LOGIN"),"");
                 return user;
             }
 

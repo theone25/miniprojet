@@ -298,20 +298,20 @@ input {
 			<form method="post" action="/authentication?register">
 				<h3>Create Account</h3>
 				<div>
-					<input type="text" placeholder="Nom" />
-					<input type="text" placeholder="Prenom" />
+					<input type="text" id="nom" name="nom" placeholder="Nom" />
+					<input type="text" id="prenom" name="prenom" placeholder="Prenom" />
 				</div>
-				<input type="date" placeholder="Date Naissance" />
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
+				<input type="date" id="dn" name="dn" placeholder="Date Naissance" />
+				<input type="email" id="email" name="email" placeholder="Email" />
+				<input type="password" id="pwd" name="pwd" placeholder="Password" />
 				<button>Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
 			<form method="post" action="/authentication?login">
 				<h3>Sign in</h3>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
+				<input type="email" id="emaillogin" name="emaillogin" placeholder="Email" />
+				<input type="password" id="pwdlogin" name="pwdlogin" placeholder="Password" />
 				<a href="#">Forgot your password?</a>
 				<button>Sign In</button>
 			</form>

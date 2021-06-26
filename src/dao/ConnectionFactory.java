@@ -6,11 +6,9 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionFactory {
-	private static final String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
-	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/api-example-db";
+	private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/miniproj?useSSL=false";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
-	private static final String MAX_POOL = "250";
 	private static ConnectionFactory instance;
 
 	// init connection object
@@ -35,7 +33,6 @@ public class ConnectionFactory {
 			properties = new Properties();
 			properties.setProperty("user", USERNAME);
 			properties.setProperty("password", PASSWORD);
-			properties.setProperty("MaxPooledStatements", MAX_POOL);
 		}
 		return properties;
 	}
@@ -44,7 +41,7 @@ public class ConnectionFactory {
 	public Connection connect() {
 		if (connection == null) {
 			try {
-				Class.forName(DATABASE_DRIVER);
+				Class.forName("com.mysql.jdbc.Driver"); 
 				connection = DriverManager.getConnection(DATABASE_URL, getProperties());
 			} catch (Exception e) {
 				e.printStackTrace();
