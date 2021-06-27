@@ -1,21 +1,18 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 
-import beans.Admin;
+import beans.Categorie;
 import beans.Produit;
-import beans.Utilisateur;
 
-public class ProduitDAO {
+public class CategorieDAO {
 	private Connection connection;
 
-    public ProduitDAO(Connection connection) {
+    public CategorieDAO(Connection connection) {
         this.connection = connection;
     }
 
@@ -23,18 +20,18 @@ public class ProduitDAO {
         return connection;
     }
 
-    public Produit findProduct(int prodID) {
-        String sql = "SELECT `ID_PR`, `ID_CAT`, `ID`, `LIBELLE`, `PRIX_UNIT`, `IMG` FROM `produit` WHERE `ID_PR`=?";
+    public Categorie findCat(int catID) {
+        String sql = "SELECT `ID_CAT`, `LIB_CAT`, `IMG_CAT` FROM `categorie` WHERE `ID_CAT`=?";
 
         try {
             PreparedStatement statement = getConnection().prepareStatement(sql);
 
-            statement.setInt(1, prodID);
+            statement.setInt(1, catID);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
-            	Produit prod = new Produit(rs.getInt("ID_PR"), rs.getInt("ID_CAT"), rs.getInt("ID"),rs.getString("LIBELLE"),rs.getFloat("PRIX_UNIT"),rs.getString("IMG"));
-                return prod;
+            	Categorie cat= new Categorie(rs.getInt("ID_CAT"),rs.getString("LIB_CAT"),rs.getString("IMG_CAT"));
+                return cat;
             }
 
         } catch (SQLException e) {
@@ -44,15 +41,15 @@ public class ProduitDAO {
 
     }
     
-    public ArrayList<Produit> findall() {
-        String sql = "SELECT `ID_PR`, `ID_CAT`, `ID`, `LIBELLE`, `PRIX_UNIT`, `IMG` FROM `produit`";
-        ArrayList<Produit> list = new ArrayList<Produit>();
+    public ArrayList<Categorie> findall() {
+        String sql = "SELECT `ID_CAT`, `LIB_CAT`, `IMG_CAT` FROM `categorie`";
+        ArrayList<Categorie> list = new ArrayList<Categorie>();
         try {
             PreparedStatement statement = getConnection().prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
-            	Produit prod = new Produit(rs.getInt("ID_PR"), rs.getInt("ID_CAT"), rs.getInt("ID"),rs.getString("LIBELLE"),rs.getFloat("PRIX_UNIT"),rs.getString("IMG"));
+            	Categorie prod = new Categorie(rs.getInt("ID_CAT"),rs.getString("LIB_CAT"),rs.getString("IMG_CAT"));
             	list.add(prod);
             }
             
@@ -63,7 +60,7 @@ public class ProduitDAO {
 
     }
 
-    public Produit add(Produit prod) {
+    /*public Produit add(Produit prod) {
         String sql = "INSERT INTO `produit`(`ID_PR`, `ID_CAT`, `ID`, `LIBELLE`, `PRIX_UNIT`, `IMG`) VALUES (NULL,?,?,?,?,?)";
 
         try {
@@ -80,8 +77,8 @@ public class ProduitDAO {
         }
         return prod;
 
-    }
-
+    }*/
+    /*
     public Produit update(Produit prod) {
         String sql = "UPDATE `produit` SET `ID_CAT`=? ,`ID`=?,`LIBELLE`=?,`PRIX_UNIT`=?,`IMG`=? WHERE `ID_PR`=?";
 
@@ -116,5 +113,5 @@ public class ProduitDAO {
         }
         return rs;
 
-    }
+    }*/
 }

@@ -40,4 +40,13 @@
         <url-pattern>/authentication</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+       <servlet-name>ProduitServlet</servlet-name>
+       <servlet-class>servlets.ProduitServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ProduitServlet</servlet-name>
+        <url-pattern>/produit</url-pattern>
+    </servlet-mapping>
 </web-app>

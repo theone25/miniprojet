@@ -66,7 +66,7 @@
                         <div class="hearer_icon d-flex">
 	                       <div class="collapse navbar-collapse" id="navbar-list-4">
 	                       <%
-						        Utilisateur user = (Utilisateur)request.getAttribute("user");
+						        Utilisateur user = (Utilisateur)session.getAttribute("session-user");
 						        if(user==null)  {
 						    %>            
 						        <ul class="navbar-nav">

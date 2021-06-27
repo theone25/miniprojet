@@ -20,4 +20,14 @@ public class DAOFactory {
         Connection connection = ConnectionFactory.getInstance().connect();
         return new UtilisateurDAO(connection);
     }
+    
+    public ProduitDAO createProduitDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new ProduitDAO(connection);
+    }
+    
+    public CategorieDAO createCategorieDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new CategorieDAO(connection);
+    }
 }
