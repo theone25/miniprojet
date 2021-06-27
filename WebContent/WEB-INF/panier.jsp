@@ -171,7 +171,7 @@
                 <td>
                   <div class="product_count">
                     <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                    <input class="input-number" type="text" value="1" min="0" max="10">
+                    <input class="input-number" type="text" value="1" min="0" max="100">
                     <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
                   </div>
                 </td>

@@ -49,4 +49,10 @@
         <servlet-name>ProduitServlet</servlet-name>
         <url-pattern>/produit</url-pattern>
     </servlet-mapping>
+    
+    
+    <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+</error-page>
 </web-app>
