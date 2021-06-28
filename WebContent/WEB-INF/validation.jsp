@@ -62,6 +62,10 @@
 	                       <div class="collapse navbar-collapse" id="navbar-list-4">
 	                       <%
 						        Utilisateur user = (Utilisateur)session.getAttribute("session-user");
+			                    ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+			                    ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
+			                    String ship=(String)session.getAttribute("shipping");
+			                    float total =0;
 						        if(user==null)  {
 						    %>            
 						        <ul class="navbar-nav">
@@ -175,39 +179,37 @@
                     <span>Total</span>
                   </a>
                 </li>
+                <% if(panierlist!=null && panierlist.size()>0 )  {
+        			total = (float) session.getAttribute("session-panier_total"); 
+        			for(int i=0;i<panierlist.size();i++){
+        			%>
                 <li>
-                  <a href="#">Fresh Blackberry
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
+                  <a href="#"><%= panierlist.get(i).getLIBELLE() %>
+                    <span class="middle">x <%= panierqte.get(i) %></span>
+                    <span class="last"><%= panierlist.get(i).getPRIX_UNIT() %></span>
                   </a>
                 </li>
-                <li>
-                  <a href="#">Fresh Tomatoes
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">Fresh Brocoli
-                    <span class="middle">x 02</span>
-                    <span class="last">$720.00</span>
-                  </a>
-                </li>
+               <% } }%>
               </ul>
               <ul class="list list_2">
                 <li>
                   <a href="#">Sous Total
-                    <span>$2160.00</span>
+                    <span><%= total %></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">Livraison
-                    <span>Flat rate: $50.00</span>
+                    <span><%= ship+" DH" %>></span>
                   </a>
                 </li>
                 <li>
                   <a href="#">Total
-                    <span>$2210.00</span>
+                  <% if(ship=="Livraison Express: 80 DH") {%>
+                    <span><%= (total+80)+ " DH" %></span>
+                    <% } %>
+                    <% if(ship=="Livraison Standard: 40 DH") {%>
+                    <span><%= (total+40)+ " DH" %></span>
+                    <% } %>
                   </a>
                 </li>
               </ul>

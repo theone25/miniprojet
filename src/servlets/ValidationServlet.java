@@ -13,30 +13,30 @@ import javax.servlet.http.HttpSession;
 import beans.Produit;
 
 /**
- * Servlet implementation class PanierServlet
+ * Servlet implementation class ValidationServlet
  */
-@WebServlet("/PanierServlet")
-public class PanierServlet extends HttpServlet {
+@WebServlet("/ValidationServlet")
+public class ValidationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/panier.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+		ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
+		if(panierlist.size()!=0 && panierlist!=null && panierqte.size()!=0 && panierqte!=null ) {
+			request.getRequestDispatcher("WEB-INF/validation.jsp").forward(request, response);
+		}else {
+	        	request.getRequestDispatcher("WEB-INF/404.jsp").forward(request, response);
+		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String val=request.getParameter("shipping");
-		if(val=="1") {
-			session.setAttribute("shipping", "Livraison Express: 80 DH");
-		}
-		else {
-			session.setAttribute("shipping", "Livraison Standard: 40 DH");
-		}
-		request.getRequestDispatcher("WEB-INF/validation.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

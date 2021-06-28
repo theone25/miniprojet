@@ -223,12 +223,13 @@
                 <td>
                   <div class="shipping_box">
                     <ul class="list">
-                      <li id="liv1" onclick="liv(1)">
-                        <a >Livraison Express: 80 DH</a>
-                      </li>
                       <li id="liv2" onclick="liv(2)" class="active">
                         <a >Livraison Standard: 40 DH</a>
                       </li>
+                      <li id="liv1" onclick="liv(1)">
+                        <a >Livraison Express: 80 DH</a>
+                      </li>
+                      
                     </ul>
                     
                   </div>
@@ -237,7 +238,7 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="btn_1 checkout_btn_1" href="#">Payer votre commande</a>
+            <a class="btn_1 checkout_btn_1" onclick="formSubmitpanier()" href="#">Payer votre commande</a>
           </div>
         </div>
       <%
@@ -264,7 +265,10 @@
       
       </div>
   </section>
+  <form hidden id="formPanier" method="POST" action="">
+    <input hidden id="shipping" name="shipping" type="text" value="2">
 
+  </form>
 
     <!--::footer_part start::-->
     <footer class="footer_part">
@@ -350,14 +354,21 @@
           var liv2=document.getElementById("liv2");
           liv1.classList.add("active");
           liv2.classList.remove("active");
-
+          var shipping=document.getElementById("shipping");
+          shipping.value="1";
         }
         else{
           var liv1=document.getElementById("liv1");
           var liv2=document.getElementById("liv2");
           liv1.classList.remove("active");
           liv2.classList.add("active");
+          var shipping=document.getElementById("shipping");
+          shipping.value="2";
         }
+      }
+
+      function formSubmitpanier(){
+        document.getElementById("formPanier").submit(); 
       }
     </script>
     
