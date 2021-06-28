@@ -51,7 +51,7 @@
 						<div class="collapse navbar-collapse main-menu-item"
 							id="navbarSupportedContent">
 							<ul class="navbar-nav">
-								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
+								<li class="nav-item"><a class="nav-link" href="/index">Acceuil</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="/produits">Tous
 										les Produits</a></li>
@@ -73,7 +73,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -90,7 +90,7 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
 							          <a class="dropdown-item" href="#">mon profile</a>
 							          <a class="dropdown-item" href="#">deconnecter</a>
 							        </div>
@@ -121,7 +121,7 @@
 	          <div class="breadcrumb_iner">
 	            <div class="breadcrumb_iner_item">
 	              <h2>Confirmation Commande</h2>
-	              <p>Home <span>-</span> Confirmation Commande</p>
+	              <p>Acceuil <span>-</span> Confirmation Commande</p>
 	            </div>
 	          </div>
 	        </div>
@@ -134,7 +134,7 @@
       <div class="billing_details">
         <div class="row">
           <div class="col-lg-8">
-            <h3>Details Paiement</h3>
+            <h3>Details de Paiement</h3>
             <form class="row contact_form" id="contact_form"  method="post" >
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" placeholder="prenom" id="first" name="first" />
@@ -218,7 +218,7 @@
               <div class="payment_item">
                 <div class="radion_btn">
                   <input type="radio" id="f-option5" name="selector" />
-                  <label for="f-option5">Cash On Delivery</label>
+                  <label for="f-option5">paiement à la livraison</label>
                   <div class="check"></div>
                 </div>
                 <p>
