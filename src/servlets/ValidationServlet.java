@@ -45,6 +45,7 @@ public class ValidationServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Utilisateur user=(Utilisateur)session.getAttribute("session-user");
 		if(user!=null) {
+			if (request.getQueryString().equals("cod")) {
 			ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
 			ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
 			Livraison liv=new Livraison();
@@ -68,7 +69,7 @@ public class ValidationServlet extends HttpServlet {
 			cmd.setID(user.getID());
 			cmd.setDATE_COM(liv.getDATE_LIV());
 			cmd.setETAT_COM("paye");
-			cmd.setPAIEMENT("CAD");
+			cmd.setPAIEMENT("COD");
 			
 			
 			cmddao.add(cmd);
@@ -82,9 +83,13 @@ public class ValidationServlet extends HttpServlet {
 				
 				cmdclidao.add(cmdcli);
 			}
+			}
+			else {
+				
+			}
 		}
 		else {
-			// code 
+			request.getRequestDispatcher("WEB-INF/Authentification.jsp").forward(request, response);
 		}
 	}
 

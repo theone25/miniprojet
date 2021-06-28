@@ -233,22 +233,22 @@
               <div class="payment_item active">
                 <div class="radion_btn">
                   <input type="radio" id="f-option6" name="selector" />
-                  <label for="f-option6">Paypal </label>
+                  <label for="f-option6">Carte Guichet </label>
                   <img src="img/product/single-product/card.jpg" alt="" />
                   <div class="check"></div>
                 </div>
                 <p>
-                  on vous offre un paiement facile avec paypal.
+                  on vous offre un paiement facile avec votre carte guichet.
                 </p>
               </div>
-              <a class="btn_3" href="#">Payer votre Commande</a>
+              <a class="btn_3" onclick="validateform()" href="#">Payer votre Commande</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   
 	<!--::footer_part start::-->
 	<footer class="footer_part">
@@ -282,6 +282,19 @@
 	<!--::footer_part end::-->
 
 	<!-- jquery plugins here-->
+
+
+	<script>
+		function validateform(){
+			var x=document.getElementsByClassName("payment_item");
+			if(x[0].classList.contains("active")){
+				document.getElementById("contact_form").action="/validation?cod";
+			}
+			else{
+				document.getElementById("contact_form").action="/validation?stripe";
+			}
+		}
+	</script>
 
 	<script src="js/jquery-1.12.1.min.js"></script>
 	<!-- popper js -->
