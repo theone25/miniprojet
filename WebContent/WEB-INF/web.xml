@@ -70,6 +70,16 @@
         <url-pattern>/panier</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+       <servlet-name>ValidationServlet</servlet-name>
+       <servlet-class>servlets.ValidationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ValidationServlet</servlet-name>
+        <url-pattern>/validation</url-pattern>
+    </servlet-mapping>
+    
     <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/404.jsp</location>

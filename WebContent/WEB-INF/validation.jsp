@@ -18,6 +18,8 @@
 <!-- owl carousel CSS -->
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/lightslider.min.css">
+  <link rel="stylesheet" href="css/nice-select.css">
+  <link rel="stylesheet" href="css/slick.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="css/all.css">
 <!-- flaticon CSS -->
@@ -51,7 +53,7 @@
 							<ul class="navbar-nav">
 								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Tous
+								<li class="nav-item"><a class="nav-link" href="/produits">Tous
 										les Produits</a></li>
 								<li class="nav-item"><a class="nav-link" href="/contact">Contact</a>
 								</li>
@@ -133,22 +135,18 @@
         <div class="row">
           <div class="col-lg-8">
             <h3>Details Paiement</h3>
-            <form class="row contact_form" action="/validation" method="post" novalidate="novalidate">
+            <form class="row contact_form" id="contact_form"  method="post" >
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="first" name="first" />
-                <span class="placeholder" data-placeholder="prenom"></span>
+                <input type="text" class="form-control" placeholder="prenom" id="first" name="first" />
               </div>
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="last" name="last" />
-                <span class="placeholder" data-placeholder="nom"></span>
+                <input type="text" class="form-control" placeholder="nom" id="last" name="last" />
               </div>
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="number" name="number" />
-                <span class="placeholder" data-placeholder="telephone"></span>
+                <input type="text" class="form-control" placeholder="telephone" id="number" name="number" />
               </div>
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="email" name="email" />
-                <span class="placeholder" data-placeholder="Email"></span>
+                <input type="text" class="form-control" placeholder="Email" id="email" name="email" />
               </div>
               <div class="col-md-12 form-group p_star">
                 <select class="country_select" id="pays" name="pays">
@@ -158,12 +156,10 @@
                 </select>
               </div>
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="add1" name="add1" />
-                <span class="placeholder" data-placeholder="Address"></span>
+                <input type="text" class="form-control" placeholder="Adresse" id="add1" name="add1" />
               </div>
               <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="city" name="city" />
-                <span class="placeholder" data-placeholder="ville"></span>
+                <input type="text" class="form-control" placeholder="ville" id="city" name="city" />
               </div>
               <div class="col-md-12 form-group">
                 <input type="text" class="form-control" id="zip" name="zip" placeholder="code postal" />
@@ -181,7 +177,7 @@
               <h2>Votre Commande</h2>
               <ul class="list">
                 <li>
-                  <a href="#">Produit
+                  <a >Produit
                     <span>Total</span>
                   </a>
                 </li>
@@ -190,7 +186,7 @@
         			for(int i=0;i<panierlist.size();i++){
         			%>
                 <li>
-                  <a href="#"><%= panierlist.get(i).getLIBELLE() %>
+                  <a ><%= panierlist.get(i).getLIBELLE() %>
                     <span class="middle">x <%= panierqte.get(i) %></span>
                     <span class="last"><%= panierlist.get(i).getPRIX_UNIT() %></span>
                   </a>
@@ -199,17 +195,17 @@
               </ul>
               <ul class="list list_2">
                 <li>
-                  <a href="#">Sous Total
+                  <a >Sous Total
                     <span><%= total %></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Livraison
+                  <a >Livraison
                     <span><%= ship+" DH" %>></span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Total
+                  <a >Total
                   <% if(ship=="Livraison Express: 80 DH") {%>
                     <span><%= (total+80)+ " DH" %></span>
                     <% } %>
@@ -233,22 +229,22 @@
               <div class="payment_item active">
                 <div class="radion_btn">
                   <input type="radio" id="f-option6" name="selector" />
-                  <label for="f-option6">Paypal </label>
+                  <label for="f-option6">Carte Guichet </label>
                   <img src="img/product/single-product/card.jpg" alt="" />
                   <div class="check"></div>
                 </div>
                 <p>
-                  on vous offre un paiement facile avec paypal.
+                  on vous offre un paiement facile avec votre carte guichet.
                 </p>
               </div>
-              <a class="btn_3" href="#">Payer votre Commande</a>
+              <a class="btn_3" onclick="validateform()" href="#">Payer votre Commande</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   
 	<!--::footer_part start::-->
 	<footer class="footer_part">
@@ -283,6 +279,20 @@
 
 	<!-- jquery plugins here-->
 
+
+	<script>
+		function validateform(){
+			if(document.getElementById("f-option5").checked){
+				document.getElementById("contact_form").action="/validation?cod";
+				document.getElementById("contact_form").submit();
+			}
+			else{
+				document.getElementById("contact_form").action="/validation?stripe";
+				document.getElementById("contact_form").submit();
+			}
+		}
+	</script>
+
 	<script src="js/jquery-1.12.1.min.js"></script>
 	<!-- popper js -->
 	<script src="js/popper.min.js"></script>
@@ -299,13 +309,15 @@
 	<script src="js/jquery.nice-select.min.js"></script>
 	<!-- slick js -->
 	<script src="js/slick.min.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/contact.js"></script>
-	<script src="js/jquery.ajaxchimp.min.js"></script>
-	<script src="js/jquery.form.js"></script>
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/mail-script.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/price_rangs.js"></script>
 	<script src="js/App.js"></script>
 
 </body>

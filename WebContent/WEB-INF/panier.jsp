@@ -79,7 +79,7 @@
                                     <a class="nav-link" href="/index">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Tous les Produits</a>
+                                    <a class="nav-link" href="/produits">Tous les Produits</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/contact">Contact</a>
@@ -238,7 +238,7 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="btn_1 checkout_btn_1" onclick="formSubmitpanier()" href="#">Payer votre commande</a>
+            <a class="btn_1 checkout_btn_1" onclick="formSubmitpanier()">Payer votre commande</a>
           </div>
         </div>
       <%
@@ -265,85 +265,40 @@
       
       </div>
   </section>
-  <form hidden id="formPanier" method="POST" action="">
+  <form hidden id="formPanier" method="POST" action="/panier">
     <input hidden id="shipping" name="shipping" type="text" value="2">
 
   </form>
 
     <!--::footer_part start::-->
     <footer class="footer_part">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-sm-6 col-lg-2">
-                    <div class="single_footer_part">
-                        <h4>Top Products</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Managed Website</a></li>
-                            <li><a href="">Manage Reputation</a></li>
-                            <li><a href="">Power Tools</a></li>
-                            <li><a href="">Marketing Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-2">
-                    <div class="single_footer_part">
-                        <h4>Quick Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Jobs</a></li>
-                            <li><a href="">Brand Assets</a></li>
-                            <li><a href="">Investor Relations</a></li>
-                            <li><a href="">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-2">
-                    <div class="single_footer_part">
-                        <h4>Features</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Jobs</a></li>
-                            <li><a href="">Brand Assets</a></li>
-                            <li><a href="">Investor Relations</a></li>
-                            <li><a href="">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-2">
-                    <div class="single_footer_part">
-                        <h4>Resources</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Guides</a></li>
-                            <li><a href="">Research</a></li>
-                            <li><a href="">Experts</a></li>
-                            <li><a href="">Agencies</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-            
-        </div>
-        <div class="copyright_part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="copyright_text">
-                          <p></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="footer_icon social_icon">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+		<div class="copyright_part">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="copyright_text">
+							<p>Ecom &copy;2021 | Tous droits réservés</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="footer_icon social_icon">
+							<ul class="list-unstyled">
+								<li><a href="#" class="single_social_icon"><i
+										class="fab fa-facebook-f"></i></a></li>
+								<li><a href="#" class="single_social_icon"><i
+										class="fab fa-twitter"></i></a></li>
+								<li><a href="#" class="single_social_icon"><i
+										class="fas fa-globe"></i></a></li>
+								<li><a href="#" class="single_social_icon"><i
+										class="fab fa-behance"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
     <!--::footer_part end::-->
 
 
