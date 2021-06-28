@@ -29,11 +29,11 @@ public class ProduitServlet extends HttpServlet {
 		DAOFactory daoFactory = DAOFactory.getInstance();
         prod = DAOFactory.getInstance().createProduitDAO();
         catdao = DAOFactory.getInstance().createCategorieDAO();
-        Categorie cat= catdao.findCat(p.getID_CAT());
         if(request.getQueryString()!=null && request.getQueryString()!="") {
         	System.out.println(request.getQueryString());
         	p = prod.findProduct(Integer.parseInt(request.getQueryString()));
             request.setAttribute("prodone", p);
+            Categorie cat= catdao.findCat(p.getID_CAT());
             request.setAttribute("catone", cat);
             request.getRequestDispatcher("WEB-INF/produit.jsp").forward(request, response);
         }

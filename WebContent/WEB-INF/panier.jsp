@@ -192,11 +192,12 @@
                   <h5><%= panierlist.get(i).getPRIX_UNIT() + " DH" %></h5>
                 </td>
                 <td>
-                  <div class="product_count">
+                  <h5><%= String.valueOf(panierqte.get(i)) %></h5>
+                  <!-- <div class="product_count"> 
                     <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
                     <input class="input-number" type="text" value="<%= String.valueOf(panierqte.get(i)) %>" min="0" max="100">
                     <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
-                  </div>
+                  </div>-->
                 </td>
                 <td>
                   <h5><%= panierqte.get(i)*panierlist.get(i).getPRIX_UNIT() +" DH"%></h5>
