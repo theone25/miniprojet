@@ -135,7 +135,7 @@
         <div class="row">
           <div class="col-lg-8">
             <h3>Details Paiement</h3>
-            <form class="row contact_form" action="/validation" method="post" novalidate="novalidate">
+            <form class="row contact_form" id="contact_form"  method="post" >
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" placeholder="prenom" id="first" name="first" />
               </div>
@@ -282,12 +282,13 @@
 
 	<script>
 		function validateform(){
-			var x=document.getElementsByClassName("payment_item");
-			if(x[0].classList.contains("active")){
+			if(document.getElementById("f-option5").checked){
 				document.getElementById("contact_form").action="/validation?cod";
+				document.getElementById("contact_form").submit();
 			}
 			else{
 				document.getElementById("contact_form").action="/validation?stripe";
+				document.getElementById("contact_form").submit();
 			}
 		}
 	</script>
