@@ -55,7 +55,7 @@
 							<ul class="navbar-nav">
 								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Tous
+								<li class="nav-item"><a class="nav-link" href="/produits">Tous
 										les Produits</a></li>
 								<li class="nav-item"><a class="nav-link" href="/contact">Contact</a>
 								</li>
