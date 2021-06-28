@@ -238,7 +238,7 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="btn_1 checkout_btn_1" onclick="formSubmitpanier()" href="#">Payer votre commande</a>
+            <a class="btn_1 checkout_btn_1" onclick="formSubmitpanier()">Payer votre commande</a>
           </div>
         </div>
       <%
@@ -265,7 +265,7 @@
       
       </div>
   </section>
-  <form hidden id="formPanier" method="POST" action="">
+  <form hidden id="formPanier" method="POST" action="/panier">
     <input hidden id="shipping" name="shipping" type="text" value="2">
 
   </form>
