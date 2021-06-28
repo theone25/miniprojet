@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Contacter Nous</title>
+<title>Contactez Nous</title>
 <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- animate CSS -->
@@ -34,14 +34,14 @@
                         <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                            aria-expanded="false" aria-label="Bascule de navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
 
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index">Home</a>
+                                    <a class="nav-link" href="/index">Acceuil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/produits">Tous les Produits</a>
@@ -60,7 +60,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -77,7 +77,7 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
 							          <a class="dropdown-item" href="#">mon profile</a>
 							          <a class="dropdown-item" href="#">deconnecter</a>
 							        </div>
@@ -112,8 +112,8 @@
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>contact us</h2>
-              <p>Home <span>-</span> contact us</p>
+              <h2>Contactez nous</h2>
+              <p>Acceuil <span>-</span> contactez nous</p>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@
 
       <div class="row">
         <div class="col-12">
-          <h2 class="contact-title">Get in Touch</h2>
+          <h2 class="contact-title">Restez en contact</h2>
         </div>
         <div class="col-lg-8">
           <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
@@ -180,31 +180,31 @@
                 <div class="form-group">
 
                   <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                    placeholder='Enter Message'></textarea>
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrez votre message'"
+                    placeholder='Entrez votre message'></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name'>
+                    onblur="this.placeholder = 'Entrez votre nom'" placeholder='Entrez votre nom'>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="form-group">
                   <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter email address'" placeholder='Enter email address'>
+                    onblur="this.placeholder = 'Entrez votre adresse email'" placeholder='Entrez votre adresse email'>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
                   <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''"
-                    onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject'>
+                    onblur="this.placeholder = 'Entrez le sujet'" placeholder='Entrez le sujet'>
                 </div>
               </div>
             </div>
             <div class="form-group mt-3">
-              <a href="#" class="btn_3 button-contactForm">Send Message</a>
+              <a href="#" class="btn_3 button-contactForm">Envoyer le message</a>
             </div>
           </form>
         </div>
@@ -212,22 +212,22 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
+              <h3>Hay almassira, Tiznit.</h3>
+              <p>CP 30950, MAROC</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-              <h3>00 (440) 9865 562</h3>
-              <p>Mon to Fri 9am to 6pm</p>
+              <h3>+212 52200000</h3>
+              <p>Ouvert du lundi au vendredi de 9h à 18h</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3>support@colorlib.com</h3>
-              <p>Send us your query anytime!</p>
+              <h3>support@ecom.com</h3>
+              <p>Envoyez nous vos demandes quand vous voulez!</p>
             </div>
           </div>
         </div>
