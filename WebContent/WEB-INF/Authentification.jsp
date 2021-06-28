@@ -341,7 +341,7 @@ input {
 				<div class="row">
 					<div class="col-lg-8">
 						<div class="copyright_text">
-							<p>Ecom &copy;2021 | Tous droits rï¿½servï¿½s</p>
+							<p>Ecom &copy;2021 | Tous droits réservés</p>
 						</div>
 					</div>
 					<div class="col-lg-4">
@@ -362,7 +362,6 @@ input {
 			</div>
 		</div>
 	</footer>
->>>>>>> 7f8f4d96b82493843cee181f104c048da8933922
   <!--::footer_part end::-->
     
     
