@@ -26,6 +26,9 @@
 <link rel="stylesheet" href="css/themify-icons.css">
 <!-- font awesome CSS -->
 <link rel="stylesheet" href="css/magnific-popup.css">
+ <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/price_rangs.css">
+    <link rel="stylesheet" href="css/nice-select.css">
 <!-- style CSS -->
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -175,7 +178,7 @@
                         <div class="col-lg-12">
                             <div class="product_top_bar d-flex justify-content-between align-items-center">
                                 <div class="single_product_menu">
-                                    <p>Produits:</p>
+                                    <p>Produits</p>
                                 </div>
                                 <div class="single_product_menu d-flex">
                                     <h5>trier par: </h5>
@@ -201,9 +204,14 @@
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                    	<% ArrayList<Produit> prd = (ArrayList<Produit>)request.getAttribute("allprod"); %>
-                        <% for(int i=0; i<prd.size();i++) { %>
-                        <div class="col-lg-4 col-sm-6">
+                    	<% 
+                    	int nump=(int)request.getAttribute("nump");
+                    	for(int j=0;j<nump;j++){ %>
+                    		
+                    	<% ArrayList<Produit> prd = (ArrayList<Produit>)request.getAttribute("allprod"+j); 
+                    	if(j==0){ %>
+                    		<% for(int i=0; i<prd.size();i++) { %>
+                        <div hidden class="pagination-list" class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
                                 <img src="img/product/<% prd.get(i).getIMG();  %>" alt="">
                                 <div class="single_product_text">
@@ -214,24 +222,35 @@
                             </div>
                         </div>
                         <% } %>
-                        
+                    	<%} else { %>
+                        <% for(int i=0; i<prd.size();i++) { %>
+                        <div class="pagination-list" class="col-lg-4 col-sm-6">
+                            <div class="single_product_item">
+                                <img src="img/product/<% prd.get(i).getIMG();  %>" alt="">
+                                <div class="single_product_text">
+                                    <h4><% prd.get(i).getLIBELLE();  %></h4>
+                                    <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
+                                    <a href="#" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                        <% } %>
+                        <% } %>
                         <div class="col-lg-12">
                             <div class="pageination">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
+                                            <a class="page-link" href="#" aria-label="Precedent">
                                                 <i class="ti-angle-double-left"></i>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                        <% for(int j=0;j<nump;j++){ %>
+                                        <li class="page-item"><a onclick="pagination(<%= j %>)" class="page-link" href="#"><%= j+1 %></a></li>
+                                        <% } %>
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
+                                            <a class="page-link" href="#" aria-label="Suivant">
                                                 <i class="ti-angle-double-right"></i>
                                             </a>
                                         </li>
@@ -279,7 +298,19 @@
 	<!--::footer_part end::-->
 
 	<!-- jquery plugins here-->
-
+<script>
+	function pagination(p1) {
+	  var list=document.getElementsByClassName("pagination-list");
+	  for(let i = 0; i < list.length; i++;){
+		  if(p1==i){
+			  list[i].style.visibility === "visible"
+		  }
+		  else{
+			  list[i].style.visibility === "hidden"
+		  }
+	  }
+	}
+</script>
 	<script src="js/jquery-1.12.1.min.js"></script>
 	<!-- popper js -->
 	<script src="js/popper.min.js"></script>
@@ -303,6 +334,8 @@
 	<script src="js/jquery.form.js"></script>
 	<script src="js/jquery.validate.min.js"></script>
 	<script src="js/mail-script.js"></script>
+	<script src="js/stellar.js"></script>
+    <script src="js/price_rangs.js"></script>
 	<script src="js/App.js"></script>
 
 </body>
