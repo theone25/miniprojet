@@ -42,17 +42,17 @@ public class ProduitServlet extends HttpServlet {
 			ArrayList<Produit> panierlist=new ArrayList<Produit>();
 			ArrayList<Integer> panierqte=new ArrayList<Integer>();
 			panierlist.add(p);
-			panierqte.add((int)request.getAttribute("product_qte"));
+			panierqte.add(Integer.parseInt(request.getParameter("product_qte")));
 			session.setAttribute("session-panier", panierlist);
 			session.setAttribute("session-panier_qte", panierqte);
-			float total=p.getPRIX_UNIT()*(int)request.getAttribute("product_qte");
+			float total=p.getPRIX_UNIT()*Integer.parseInt(request.getParameter("product_qte"));
 			session.setAttribute("session-panier_total", total);
 		}
 		else {
 			ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
 			ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
 			panierlist.add(p);
-			panierqte.add((int)request.getAttribute("product_qte"));
+			panierqte.add(Integer.parseInt(request.getParameter("product_qte")));
 			session.setAttribute("session-panier", panierlist);
 			session.setAttribute("session-panier_qte", panierqte);
 			float total=0;
