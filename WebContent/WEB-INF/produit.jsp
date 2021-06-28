@@ -51,7 +51,7 @@
 						<div class="collapse navbar-collapse main-menu-item"
 							id="navbarSupportedContent">
 							<ul class="navbar-nav">
-								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
+								<li class="nav-item"><a class="nav-link" href="/index">Acceuil</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="/produits">Tous
 										les Produits</a></li>
@@ -69,7 +69,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -86,7 +86,7 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
 							          <a class="dropdown-item" href="#">mon profile</a>
 							          <a class="dropdown-item" href="#">deconnecter</a>
 							        </div>
