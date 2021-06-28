@@ -51,8 +51,9 @@ public class ValidationServlet extends HttpServlet {
 			Livraison liv=new Livraison();
 			liv.setID_TYPE(Integer.valueOf(request.getParameter("typeliv")));
 			liv.setADRESSE_LIV(request.getParameter("add1")+" "+request.getParameter("city")+" "+request.getParameter("pays"));
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
 		    java.util.Date date = new java.util.Date();  
+		    System.out.println(formatter.format(date));
 			liv.setDATE_LIV(java.sql.Date.valueOf(formatter.format(date)));
 			liv.setTEL_LIV(request.getParameter("number"));
 			liv.setNUM_LIV(0);
@@ -83,6 +84,8 @@ public class ValidationServlet extends HttpServlet {
 				
 				cmdclidao.add(cmdcli);
 			}
+			request.getRequestDispatcher("WEB-INF/confirmation.jsp").forward(request, response);
+				
 			}
 			else {
 				// code validation stripe
