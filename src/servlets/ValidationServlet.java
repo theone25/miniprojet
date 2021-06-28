@@ -85,7 +85,7 @@ public class ValidationServlet extends HttpServlet {
 			}
 			}
 			else {
-				
+				// code validation stripe
 			}
 		}
 		else {
