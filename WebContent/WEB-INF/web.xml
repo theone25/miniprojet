@@ -59,6 +59,17 @@
         <servlet-name>ProduitsAllServlet</servlet-name>
         <url-pattern>/produits</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+       <servlet-name>PanierServlet</servlet-name>
+       <servlet-class>servlets.PanierServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>PanierServlet</servlet-name>
+        <url-pattern>/panier</url-pattern>
+    </servlet-mapping>
+    
     <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/404.jsp</location>

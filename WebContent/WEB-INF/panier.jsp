@@ -32,8 +32,29 @@
 
 
 <style>
-	.user-profile {
-  color: #5E6974 !important;
+  
+  
+  .panier-card {
+    margin-bottom: 30px;
+    border: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    letter-spacing: .5px;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05);
+    box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05)
+}
+
+.panier-card .panier-card-body {
+    padding: 30px;
+    background-color: transparent
+}
+
+.panier-button-empty,
+.panier-button-empty.disabled,
+.panier-button-empty:disabled {
+    background-color: #4466f2 !important;
+    border-color: #4466f2 !important
 }
 
 </style>
@@ -102,7 +123,7 @@
 						    %>
 							    <ul class="navbar-nav">
 							    <div class="dropdown cart">
-	                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+	                                <a class="dropdown-toggle" href="/panier" id="navbarDropdown3" role="button"
 	                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                    <i class="fas fa-cart-plus"></i>
 	                                </a>
@@ -141,8 +162,8 @@
       <%
 		ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
       ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
-      float total =(float)session.getAttribute("session-panier_total");
-		if(panierlist!=null && panierlist.size()>0)  {
+		if(panierlist!=null && panierlist.size()>0 )  {
+			float total = (float) session.getAttribute("session-panier_total");
 	  %>  
         <div class="table-responsive">
           <table class="table">
@@ -201,10 +222,10 @@
                 <td>
                   <div class="shipping_box">
                     <ul class="list">
-                      <li>
+                      <li id="liv1" onclick="liv(1)">
                         <a >Livraison Express: 80 DH</a>
                       </li>
-                      <li class="active">
+                      <li id="liv2" onclick="liv(2)" class="active">
                         <a >Livraison Standard: 40 DH</a>
                       </li>
                     </ul>
@@ -222,7 +243,20 @@
 		} else {
 	  %>
       
-      <!-- code html show empty cart -->
+      <div class="container-fluid mt-100">
+		    <div class="row">
+		        <div class="col-md-12">
+		            <div class="card panier-card">
+		                <div class="card-body panier-card-body cart">
+		                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
+		                        <h3><strong>Votre panier est Vide</strong></h3>
+		                        <h4>Pour continuer vos achats cliquer sur le bouton au dessus :)</h4> <a class="btn_3" href="/produits">continue votre Shopping</a>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
       
       <% } %>
       
@@ -306,6 +340,25 @@
         </div>
     </footer>
     <!--::footer_part end::-->
+
+
+    <script>
+      function liv(x){
+        if(x==1){
+          var liv1=document.getElementById("liv1");
+          var liv2=document.getElementById("liv2");
+          liv1.classList.add("active");
+          liv2.classList.remove("active");
+
+        }
+        else{
+          var liv1=document.getElementById("liv1");
+          var liv2=document.getElementById("liv2");
+          liv1.classList.remove("active");
+          liv2.classList.add("active");
+        }
+      }
+    </script>
     
     <!-- jquery -->
   <script src="js/jquery-1.12.1.min.js"></script>

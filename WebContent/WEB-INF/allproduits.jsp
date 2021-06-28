@@ -99,7 +99,7 @@
 						    %>
 							    <ul class="navbar-nav">
 							    <div class="dropdown cart">
-	                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+	                                <a class="dropdown-toggle" href="/panier" id="navbarDropdown3" role="button"
 	                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                    <i class="fas fa-cart-plus"></i>
 	                                </a>
@@ -301,7 +301,7 @@
 <script>
 	function pagination(p1) {
 	  var list=document.getElementsByClassName("pagination-list");
-	  for(let i = 0; i < list.length; i++;){
+	  for(let i = 0; i < list.length; i++){
 		  if(p1==i){
 			  list[i].style.visibility === "visible"
 		  }

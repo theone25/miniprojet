@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Categorie;
 import beans.Produit;
+import dao.CategorieDAO;
 import dao.DAOFactory;
 import dao.ProduitDAO;
 import dao.UtilisateurDAO;
@@ -21,13 +23,18 @@ public class ProduitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ProduitDAO prod;
 	Produit p;
+	CategorieDAO catdao;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DAOFactory daoFactory = DAOFactory.getInstance();
         prod = DAOFactory.getInstance().createProduitDAO();
+        catdao = DAOFactory.getInstance().createCategorieDAO();
+        Categorie cat= catdao.findCat(p.getID_CAT());
         if(request.getQueryString()!=null && request.getQueryString()!="") {
         	System.out.println(request.getQueryString());
         	p = prod.findProduct(Integer.parseInt(request.getQueryString()));
             request.setAttribute("prodone", p);
+            request.setAttribute("catone", cat);
             request.getRequestDispatcher("WEB-INF/produit.jsp").forward(request, response);
         }
         else {

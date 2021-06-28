@@ -100,7 +100,7 @@
 						    %>
 							    <ul class="navbar-nav">
 							    <div class="dropdown cart">
-	                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+	                                <a class="dropdown-toggle" href="/panier" id="navbarDropdown3" role="button"
 	                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                    <i class="fas fa-cart-plus"></i>
 	                                </a>

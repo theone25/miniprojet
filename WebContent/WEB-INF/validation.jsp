@@ -132,66 +132,46 @@
             <form class="row contact_form" action="#" method="post" novalidate="novalidate">
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" id="first" name="name" />
-                <span class="placeholder" data-placeholder="First name"></span>
+                <span class="placeholder" data-placeholder="prenom"></span>
               </div>
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" id="last" name="name" />
-                <span class="placeholder" data-placeholder="Last name"></span>
-              </div>
-              <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="company" name="company" placeholder="Company name" />
+                <span class="placeholder" data-placeholder="nom"></span>
               </div>
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" id="number" name="number" />
-                <span class="placeholder" data-placeholder="Phone number"></span>
+                <span class="placeholder" data-placeholder="telephone"></span>
               </div>
               <div class="col-md-6 form-group p_star">
                 <input type="text" class="form-control" id="email" name="compemailany" />
-                <span class="placeholder" data-placeholder="Email Address"></span>
+                <span class="placeholder" data-placeholder="Email"></span>
               </div>
               <div class="col-md-12 form-group p_star">
                 <select class="country_select">
-                  <option value="1">Country</option>
-                  <option value="2">Country</option>
-                  <option value="4">Country</option>
+                  <option value="1">Pays</option>
+                  <option value="2">Maroc</option>
+
                 </select>
               </div>
               <div class="col-md-12 form-group p_star">
                 <input type="text" class="form-control" id="add1" name="add1" />
-                <span class="placeholder" data-placeholder="Address line 01"></span>
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <input type="text" class="form-control" id="add2" name="add2" />
-                <span class="placeholder" data-placeholder="Address line 02"></span>
+                <span class="placeholder" data-placeholder="Address"></span>
               </div>
               <div class="col-md-12 form-group p_star">
                 <input type="text" class="form-control" id="city" name="city" />
-                <span class="placeholder" data-placeholder="Town/City"></span>
-              </div>
-              <div class="col-md-12 form-group p_star">
-                <select class="country_select">
-                  <option value="1">District</option>
-                  <option value="2">District</option>
-                  <option value="4">District</option>
-                </select>
+                <span class="placeholder" data-placeholder="ville"></span>
               </div>
               <div class="col-md-12 form-group">
-                <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP" />
-              </div>
-              <div class="col-md-12 form-group">
-                <div class="creat_account">
-                  <input type="checkbox" id="f-option2" name="selector" />
-                  <label for="f-option2">Create an account?</label>
-                </div>
+                <input type="text" class="form-control" id="zip" name="zip" placeholder="code postal" />
               </div>
             </form>
           </div>
           <div class="col-lg-4">
             <div class="order_box">
-              <h2>Your Order</h2>
+              <h2>Votre Commande</h2>
               <ul class="list">
                 <li>
-                  <a href="#">Product
+                  <a href="#">Produit
                     <span>Total</span>
                   </a>
                 </li>
@@ -216,12 +196,12 @@
               </ul>
               <ul class="list list_2">
                 <li>
-                  <a href="#">Subtotal
+                  <a href="#">Sous Total
                     <span>$2160.00</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">Shipping
+                  <a href="#">Livraison
                     <span>Flat rate: $50.00</span>
                   </a>
                 </li>
@@ -253,12 +233,7 @@
                   on vous offre un paiement facile avec paypal.
                 </p>
               </div>
-              <div class="creat_account">
-                <input type="checkbox" id="f-option4" name="selector" />
-                <label for="f-option4">I’ve read and accept the </label>
-                <a href="#">terms & conditions*</a>
-              </div>
-              <a class="btn_3" href="#">Proceed to Paypal</a>
+              <a class="btn_3" href="#">Payer votre Commande</a>
             </div>
           </div>
         </div>

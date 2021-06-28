@@ -1,3 +1,4 @@
+<%@page import="beans.Categorie"%>
 <%@page import="beans.Utilisateur"%>
 <%@page import="beans.Produit"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,7 +10,9 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Ecom | <% 
-  Produit p=(Produit) request.getAttribute("prodone"); %></title>
+  Produit p=(Produit) request.getAttribute("prodone");
+  Categorie cat=(Categorie) request.getAttribute("catone");
+%></title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- animate CSS -->
@@ -94,7 +97,7 @@
 						    %>
 							    <ul class="navbar-nav">
 							    <div class="dropdown cart">
-	                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+	                                <a class="dropdown-toggle" href="/panier" id="navbarDropdown3" role="button"
 	                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                                    <i class="fas fa-cart-plus"></i>
 	                                </a>
@@ -125,7 +128,7 @@
 						<h2><%= p.getPRIX_UNIT()+ " DH"%></h2>
 						<ul class="list">
 							<li><a class="active" href="#"> <span>Catégorie</span> :
-									Household
+									<%= cat.getLIB_CAT() %>
 							</a></li>
 						</ul>
 						<p>
@@ -140,7 +143,7 @@
 									class="number-increment"> <i class="ti-plus"></i></span> <input
 									type="hidden" name="product_id" id="product_id" value=<%= p.getID_PR() %>>
 							</div>
-							<button type="submit"   class="btn_3">+ Au panier</button>
+							<button type="submit" class="btn_3">+ Au panier</button>
 						</form>
 					</div>
 				</div>
