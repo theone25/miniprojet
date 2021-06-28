@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>shop</title>
+<title>Boutique</title>
 <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- animate CSS -->
@@ -53,7 +53,7 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index">Home</a>
+                                    <a class="nav-link" href="/index">Acceuil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/produits">Tous les Produits</a>
@@ -72,7 +72,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -89,9 +89,9 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
 							          <a class="dropdown-item" href="#">mon profile</a>
-							          <a class="dropdown-item" href="#">deconnecter</a>
+							          <a class="dropdown-item" href="#">deconnection</a>
 							        </div>
 							      </li>   
 							    </ul>
@@ -134,7 +134,7 @@
                                                 Sofa</h1>
                                             <p>Incididunt ut labore et dolore magna aliqua quis ipsum
                                                 suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <a href="#" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@
                                                 Sofa</h1>
                                             <p>Incididunt ut labore et dolore magna aliqua quis ipsum
                                                 suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <a href="#" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@
                                                 Sofa</h1>
                                             <p>Incididunt ut labore et dolore magna aliqua quis ipsum
                                                 suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <a href="#" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +239,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>awesome <span>shop</span></h2>
+                        <h2>Stars <span></span> Boutique</h2>
                     </div>
                 </div>
             </div>
@@ -254,7 +254,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -274,7 +274,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -284,7 +284,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -304,7 +304,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -314,7 +314,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -324,7 +324,7 @@
                                         <div class="single_product_text">
                                             <h4>Quartz Belt Watch</h4>
                                             <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>Best Sellers <span>shop</span></h2>
+                        <h2>Les plus vendus <span>Boutique</span></h2>
                     </div>
                 </div>
             </div>
@@ -399,14 +399,13 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="subscribe_area_text text-center">
-                        <h5>Join Our Newsletter</h5>
-                        <h2>Subscribe to get Updated
-                            with new offers</h2>
+                        <h5>Rejoignez notre fil d'actualités</h5>
+                        <h2>Abonnez vous pour recevoir nos offres les plus récentes</h2>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="enter email address"
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <a href="#" class="input-group-text btn_2" id="basic-addon2">subscribe now</a>
+                                <a href="#" class="input-group-text btn_2" id="basic-addon2">Je m'abonne!</a>
                             </div>
                         </div>
                     </div>
