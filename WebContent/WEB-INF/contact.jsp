@@ -44,7 +44,7 @@
                                     <a class="nav-link" href="/index">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Tous les Produits</a>
+                                    <a class="nav-link" href="/produits">Tous les Produits</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/contact">Contact</a>
