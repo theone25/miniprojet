@@ -50,9 +50,17 @@
         <url-pattern>/produit</url-pattern>
     </servlet-mapping>
     
+     <servlet>
+       <servlet-name>ProduitsAllServlet</servlet-name>
+       <servlet-class>servlets.ProduitsAllServlet</servlet-class>
+    </servlet>
     
+    <servlet-mapping>
+        <servlet-name>ProduitsAllServlet</servlet-name>
+        <url-pattern>/produits</url-pattern>
+    </servlet-mapping>
     <error-page>
     <error-code>404</error-code>
-    <location>/404.jsp</location>
+    <location>/WEB-INF/404.jsp</location>
 </error-page>
 </web-app>
