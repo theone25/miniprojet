@@ -72,6 +72,12 @@ public class ValidationServlet extends HttpServlet {
 			cmd.setETAT_COM("paye");
 			cmd.setPAIEMENT("COD");
 			
+			ArrayList<String> adr=new ArrayList<String>();
+			adr.add(request.getParameter("add1"));
+			adr.add(request.getParameter("city"));
+			adr.add(request.getParameter("pays"));
+			adr.add(request.getParameter("zip"));
+			request.setAttribute("adr", cmddao);
 			
 			cmddao.add(cmd);
 			
@@ -84,6 +90,9 @@ public class ValidationServlet extends HttpServlet {
 				
 				cmdclidao.add(cmdcli);
 			}
+			
+			request.setAttribute("cmd", cmd);
+			request.setAttribute("liv", liv);
 			request.getRequestDispatcher("WEB-INF/confirmation.jsp").forward(request, response);
 				
 			}

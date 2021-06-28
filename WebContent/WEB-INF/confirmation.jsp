@@ -1,3 +1,5 @@
+<%@page import="beans.Livraison"%>
+<%@page import="beans.Commande"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="beans.Categorie"%>
 <%@page import="beans.Utilisateur"%>
@@ -62,6 +64,13 @@
 	                       <div class="collapse navbar-collapse" id="navbar-list-4">
 	                       <%
 						        Utilisateur user = (Utilisateur)session.getAttribute("session-user");
+	                       		ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+	           					ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
+	                       		Commande cmd=(Commande)request.getAttribute("cmd");
+	                       		Livraison liv=(Livraison)request.getAttribute("liv");
+	                       		ArrayList<String> adr=(ArrayList<String>)request.getAttribute("adr"); 
+	                       		float total =0;
+	                       		total = (float) session.getAttribute("session-panier_total"); 
 						        if(user==null)  {
 						    %>            
 						        <ul class="navbar-nav">
@@ -136,13 +145,17 @@
             <h4>informations de la commande</h4>
             <ul>
               <li>
-                <p>Numéro de la commande</p><span>: 60235</span>
+                <p>Numéro de la commande</p><span>: <%= cmd.getNUM_COM() %></span>
               </li>
               <li>
-                <p>Date</p><span>: Jun 03, 2021</span>
+                <p>Date</p><span>: <%= cmd.getDATE_COM() %></span>
               </li>
               <li>
-                <p>Total</p><span>: 2210 DH</span>
+              <% if( liv.getID_TYPE()==1) { %>
+                <p>Total</p><span>: <%= total+80 %> DH</span>
+                <% } else { %>
+                <p>Total</p><span>: <%= total+40 %> DH</span>
+                <% } %>
               </li>
               <li>
                 <p>Méthode de paiement</p><span>: Vérifier les paiements</span>
@@ -155,16 +168,16 @@
             <h4>Adresse de facturation</h4>
             <ul>
               <li>
-                <p>Rue</p><span>: 56/8</span>
+                <p>Rue</p><span>: <%= adr.get(0)  %></span>
               </li>
               <li>
-                <p>Ville</p><span>: Tiznit</span>
+                <p>Ville</p><span>: <%= adr.get(1)  %></span>
               </li>
               <li>
-                <p>Pays</p><span>: Maroc</span>
+                <p>Pays</p><span>: <%= adr.get(2)  %></span>
               </li>
               <li>
-                <p>Code postal</p><span>: 36952</span>
+                <p>Code postal</p><span>: <%= adr.get(3)  %></span>
               </li>
             </ul>
           </div>
@@ -174,16 +187,16 @@
             <h4>Adresse de livraison</h4>
             <ul>
               <li>
-                <p>Rue</p><span>: 56/8</span>
+                <p>Rue</p><span>: <%= adr.get(0)  %></span>
               </li>
               <li>
-                <p>Ville</p><span>: Tiznit</span>
+                <p>Ville</p><span>: <%= adr.get(1)  %></span>
               </li>
               <li>
-                <p>Pays</p><span>: Maroc</span>
+                <p>Pays</p><span>: <%= adr.get(2)  %></span>
               </li>
               <li>
-                <p>Code postal</p><span>: 36952</span>
+                <p>Code postal</p><span>: <%= adr.get(3)  %></span>
               </li>
             </ul>
           </div>
@@ -202,34 +215,37 @@
                 </tr>
               </thead>
               <tbody>
+               <% if(panierlist!=null && panierlist.size()>0 )  {
+        			for(int i=0;i<panierlist.size();i++){
+        			%>
                 <tr>
-                  <th colspan="2"><span>Mûre fraîche Pixelstore</span></th>
-                  <th>x02</th>
-                  <th> <span>720.00 DH</span></th>
+                  <th colspan="2"><span><%= panierlist.get(i).getLIBELLE() %></span></th>
+                  <th>x<%=panierqte.get(i) %></th>
+                  <th> <span><%= panierqte.get(i)*panierlist.get(i).getPRIX_UNIT()  %> DH</span></th>
                 </tr>
-                <tr>
-                  <th colspan="2"><span>Mûre fraîche Pixelstore</span></th>
-                  <th>x02</th>
-                  <th> <span>720.00 DH</span></th>
-                </tr>
-                <tr>
-                  <th colspan="2"><span>Mûre fraîche Pixelstore</span></th>
-                  <th>x02</th>
-                  <th> <span>720.00 DH</span></th>
-                </tr>
+                <%} } %>
                 <tr>
                   <th colspan="3">Sous total</th>
-                  <th> <span>2160.00 DH</span></th>
+                  <th> <span><%= total %> DH</span></th>
                 </tr>
                 <tr>
                   <th colspan="3">Livraison</th>
-                  <th><span>Forfait: 50.00 DH</span></th>
+                  <% if( liv.getID_TYPE()==1) { %>
+                <th><span>Livraison Express: 80.00 DH</span></th>
+                <% } else { %>
+                <th><span>Livraison Standard: 40.00 DH</span></th>
+                <% } %>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
-                  <th scope="col" colspan="3">Quantité</th>
-                  <th scope="col">Total</th>
+                  <th scope="col" colspan="3"></th>
+                  <% if( liv.getID_TYPE()==1) { %>
+                <th scope="col"><%= total+80 %></th>
+                <% } else { %>
+                <th scope="col"><%= total+40 %></th>
+                <% } %>
+                  
                 </tr>
               </tfoot>
             </table>
