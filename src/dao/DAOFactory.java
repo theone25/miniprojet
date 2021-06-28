@@ -30,4 +30,19 @@ public class DAOFactory {
         Connection connection = ConnectionFactory.getInstance().connect();
         return new CategorieDAO(connection);
     }
+    
+    public LivraisonDAO createLivraisonDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new LivraisonDAO(connection);
+    }
+    
+    public CommandeClientDAO createCommandeClientDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new CommandeClientDAO(connection);
+    }
+    
+    public CommandeDAO createCommandeDAO() {
+        Connection connection = ConnectionFactory.getInstance().connect();
+        return new CommandeDAO(connection);
+    }
 }

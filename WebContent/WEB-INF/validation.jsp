@@ -133,13 +133,13 @@
         <div class="row">
           <div class="col-lg-8">
             <h3>Details Paiement</h3>
-            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+            <form class="row contact_form" action="/validation" method="post" novalidate="novalidate">
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="first" name="name" />
+                <input type="text" class="form-control" id="first" name="first" />
                 <span class="placeholder" data-placeholder="prenom"></span>
               </div>
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="last" name="name" />
+                <input type="text" class="form-control" id="last" name="last" />
                 <span class="placeholder" data-placeholder="nom"></span>
               </div>
               <div class="col-md-6 form-group p_star">
@@ -147,11 +147,11 @@
                 <span class="placeholder" data-placeholder="telephone"></span>
               </div>
               <div class="col-md-6 form-group p_star">
-                <input type="text" class="form-control" id="email" name="compemailany" />
+                <input type="text" class="form-control" id="email" name="email" />
                 <span class="placeholder" data-placeholder="Email"></span>
               </div>
               <div class="col-md-12 form-group p_star">
-                <select class="country_select">
+                <select class="country_select" id="pays" name="pays">
                   <option value="1">Pays</option>
                   <option value="2">Maroc</option>
 
@@ -168,6 +168,12 @@
               <div class="col-md-12 form-group">
                 <input type="text" class="form-control" id="zip" name="zip" placeholder="code postal" />
               </div>
+              <% if(ship=="Livraison Express: 80 DH") {%>
+                    <input type="text" hidden value="1" id="typeliv" name="typeliv"  />
+                    <% } %>
+                    <% if(ship=="Livraison Standard: 40 DH") {%>
+                    <input type="text" value="2" hidden id="typeliv" name="typeliv" />
+                    <% } %>
             </form>
           </div>
           <div class="col-lg-4">

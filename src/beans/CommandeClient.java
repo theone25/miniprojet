@@ -20,12 +20,23 @@ public class CommandeClient {
 	{
 		this.ID_PR = value;
 	}
+	
+	private int QTE;
+	public int getQTE()
+	{
+		return this.QTE;
+	}
+	public void setQTE(int value)
+	{
+		this.QTE = value;
+	}
 
 
-	public CommandeClient(int NUM_COM,int ID_PR)
+	public CommandeClient(int NUM_COM,int ID_PR,int QTE)
 	{
 		this.NUM_COM = NUM_COM;
 		this.ID_PR = ID_PR;
+		this.QTE=QTE;
 	}
 	
 	public CommandeClient() {
