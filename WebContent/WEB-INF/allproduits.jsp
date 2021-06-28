@@ -46,14 +46,14 @@
 						<button class="navbar-toggler" type="button"
 							data-toggle="collapse" data-target="#navbarSupportedContent"
 							aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
+							aria-label="Bascule de navigation">
 							<span class="menu_icon"><i class="fas fa-bars"></i></span>
 						</button>
 
 						<div class="collapse navbar-collapse main-menu-item"
 							id="navbarSupportedContent">
 							<ul class="navbar-nav">
-								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
+								<li class="nav-item"><a class="nav-link" href="/index">Acceuil</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="#">Tous
 										les Produits</a></li>
@@ -71,7 +71,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -88,9 +88,9 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
-							          <a class="dropdown-item" href="#">mon profile</a>
-							          <a class="dropdown-item" href="#">deconnecter</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
+							          <a class="dropdown-item" href="#">Mon profile</a>
+							          <a class="dropdown-item" href="#">Déconnection</a>
 							        </div>
 							      </li>   
 							    </ul>
@@ -120,8 +120,8 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Shop Category</h2>
-                            <p>Home <span>-</span> Shop Category</p>
+                            <h2>Catégories du magasin</h2>
+                            <p>Acceuil <span>-</span> Catégories du magasin</p>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                                         </div>
                                         <div class="price_value d-flex justify-content-center">
                                             <input type="text" class="js-input-from" id="amount" readonly />
-                                            <span>to</span>
+                                            <span>jusqu'à</span>
                                             <input type="text" class="js-input-to" id="amount" readonly />
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@
                                 <div class="single_product_text">
                                     <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart"> Ajouter Au Panier<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                 <div class="single_product_text">
                                     <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">Ajouter Au Panier<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -239,10 +239,10 @@
                         <% } %>
                         <div class="col-lg-12">
                             <div class="pageination">
-                                <nav aria-label="Page navigation example">
+                                <nav aria-label="Exemple de page de navigation">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Precedent">
+                                            <a class="page-link" href="#" aria-label="Précedent">
                                                 <i class="ti-angle-double-left"></i>
                                             </a>
                                         </li>

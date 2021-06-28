@@ -42,14 +42,14 @@
 						<button class="navbar-toggler" type="button"
 							data-toggle="collapse" data-target="#navbarSupportedContent"
 							aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
+							aria-label="Bascule de navigation">
 							<span class="menu_icon"><i class="fas fa-bars"></i></span>
 						</button>
 
 						<div class="collapse navbar-collapse main-menu-item"
 							id="navbarSupportedContent">
 							<ul class="navbar-nav">
-								<li class="nav-item"><a class="nav-link" href="/index">Home</a>
+								<li class="nav-item"><a class="nav-link" href="/index">Acceuil</a>
 								</li>
 								<li class="nav-item"><a class="nav-link" href="#">Tous
 										les Produits</a></li>
@@ -67,7 +67,7 @@
 						        <ul class="navbar-nav">
 							        <li class="nav-item dropdown">
 							        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							          <span>Authentifier<i class="fas fa-user"></i></span>
+							          <span>Authentification<i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							          <a class="dropdown-item" href="/authentication">Se connecter</a>
@@ -84,9 +84,9 @@
 							          <span><%= user.getNOM()+" "+user.getPRENOM() %><i class="fas fa-user"></i></span>
 							        </a>
 							        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							          <a class="dropdown-item" href="#">home</a>
+							          <a class="dropdown-item" href="#">Acceuil</a>
 							          <a class="dropdown-item" href="#">mon profile</a>
-							          <a class="dropdown-item" href="#">deconnecter</a>
+							          <a class="dropdown-item" href="#">deconnection</a>
 							        </div>
 							      </li>   
 							    </ul>
@@ -114,7 +114,7 @@
 				<h1>Oops!</h1>
 				<h2>404 - Page non trouvé</h2>
 			</div>
-			<a href="/index">Au Page d'Acceuil</a>
+			<a href="/index">Vers Page d'Acceuil</a>
 		</div>
 	</div>
    

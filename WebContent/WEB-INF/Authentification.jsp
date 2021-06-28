@@ -252,14 +252,14 @@ input {
                         <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                            aria-expanded="false" aria-label="Bascule de navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
 
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/index">Home</a>
+                                    <a class="nav-link" href="/index">Acceuil</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Tous les Produits</a>
@@ -294,37 +294,37 @@ input {
     <div class="container" id="container">
 		<div class="form-container sign-up-container">
 			<form method="post" action="/authentication?register">
-				<h3>Create Account</h3>
+				<h3>Créer un compte</h3>
 				<div>
 					<input type="text" id="nom" name="nom" placeholder="Nom" />
 					<input type="text" id="prenom" name="prenom" placeholder="Prenom" />
 				</div>
-				<input type="date" id="dn" name="dn" placeholder="Date Naissance" />
+				<input type="date" id="dn" name="dn" placeholder="Date de Naissance" />
 				<input type="email" id="email" name="email" placeholder="Email" />
-				<input type="password" id="pwd" name="pwd" placeholder="Password" />
-				<button>Sign Up</button>
+				<input type="password" id="pwd" name="pwd" placeholder="Mot de passe" />
+				<button>S'inscrire</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
 			<form method="post" action="/authentication?login">
-				<h3>Sign in</h3>
+				<h3>Se connecter</h3>
 				<input type="email" id="emaillogin" name="emaillogin" placeholder="Email" />
-				<input type="password" id="pwdlogin" name="pwdlogin" placeholder="Password" />
-				<a href="#">Forgot your password?</a>
-				<button>Sign In</button>
+				<input type="password" id="pwdlogin" name="pwdlogin" placeholder="Mot de passe" />
+				<a href="#">Mot de passe oublié?</a>
+				<button>Se connecter</button>
 			</form>
 		</div>
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-left">
-					<h1>Welcome Back!</h1>
-					<p>To keep connected with us please login with your personal info</p>
-					<button class="ghost" id="signIn">Sign In</button>
+					<h1>Bon retour!</h1>
+					<p>Pour rester en contact avec nous veuillez vous connecter avec vos informations personnelles</p>
+					<button class="ghost" id="signIn">Se connecter</button>
 				</div>
 				<div class="overlay-panel overlay-right">
-					<h1>Hello, Friend!</h1>
-					<p>Enter your personal details and start journey with us</p>
-					<button class="ghost" id="signUp">Sign Up</button>
+					<h1>Bienvenue !</h1>
+					<p>Entrez vos informations personnelles et commencez votre voyage avec nous!</p>
+					<button class="ghost" id="signUp">S'inscrire</button>
 				</div>
 			</div>
 		</div>
@@ -339,7 +339,7 @@ input {
       <div class="row justify-content-around">
         <div class="col-sm-6 col-lg-2">
           <div class="single_footer_part">
-            <h4>Top Products</h4>
+            <h4>Top Produits</h4>
             <ul class="list-unstyled">
               <li><a href="">Managed Website</a></li>
               <li><a href="">Manage Reputation</a></li>
