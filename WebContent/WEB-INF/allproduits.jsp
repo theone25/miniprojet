@@ -217,7 +217,7 @@
                                 <div class="single_product_text">
                                     <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart"> Ajouter Au Panier<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+ Ajouter Au Panier<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                 <div class="single_product_text">
                                     <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">Ajouter Au Panier<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+ Ajouter Au Panier<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>
