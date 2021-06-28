@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.mysql.jdbc.Statement;
+
 import beans.Livraison;
 import beans.Produit;
 
@@ -44,12 +46,21 @@ public class LivraisonDAO {
         String sql = "INSERT INTO `livraison`(`NUM_LIV`, `ID_TYPE`, `ADRESSE_LIV`, `TEL_LIV`, `DATE_LIV`) VALUES (NULL,?,?,?,?)";
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement(sql);
+            PreparedStatement statement = getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, liv.getID_TYPE());
             statement.setString(2, liv.getADRESSE_LIV());
             statement.setString(3, liv.getTEL_LIV());
             statement.setDate(4, liv.getDATE_LIV());
             int rs = statement.executeUpdate();
+            
+            try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    liv.setNUM_LIV(generatedKeys.getInt(1));
+                }
+                else {
+                    throw new SQLException("Creating user failed, no ID obtained.");
+                }
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();

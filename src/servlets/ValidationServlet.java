@@ -12,8 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Commande;
+import beans.CommandeClient;
 import beans.Livraison;
 import beans.Produit;
+import beans.Utilisateur;
+import dao.CommandeClientDAO;
+import dao.CommandeDAO;
+import dao.DAOFactory;
+import dao.LivraisonDAO;
 
 /**
  * Servlet implementation class ValidationServlet
@@ -36,17 +43,49 @@ public class ValidationServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
-		ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
-		Livraison liv=new Livraison();
-		liv.setID_TYPE(Integer.valueOf(request.getParameter("typeliv")));
-		liv.setADRESSE_LIV(request.getParameter("add1")+" "+request.getParameter("city")+" "+request.getParameter("pays"));
-		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-	    java.util.Date date = new java.util.Date();  
-		liv.setDATE_LIV(java.sql.Date.valueOf(formatter.format(date)));
-		liv.setTEL_LIV(request.getParameter("number"));
-		liv.setNUM_LIV(0);
-		
+		Utilisateur user=(Utilisateur)session.getAttribute("session-user");
+		if(user!=null) {
+			ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+			ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
+			Livraison liv=new Livraison();
+			liv.setID_TYPE(Integer.valueOf(request.getParameter("typeliv")));
+			liv.setADRESSE_LIV(request.getParameter("add1")+" "+request.getParameter("city")+" "+request.getParameter("pays"));
+			SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+		    java.util.Date date = new java.util.Date();  
+			liv.setDATE_LIV(java.sql.Date.valueOf(formatter.format(date)));
+			liv.setTEL_LIV(request.getParameter("number"));
+			liv.setNUM_LIV(0);
+			
+			DAOFactory daoFactory = DAOFactory.getInstance();
+			LivraisonDAO livdao=DAOFactory.getInstance().createLivraisonDAO();
+			livdao.add(liv);
+			
+			CommandeDAO cmddao=daoFactory.getInstance().createCommandeDAO();
+			 
+			Commande cmd=new Commande();
+			cmd.setNUM_COM(0);
+			cmd.setNUM_LIV(liv.getNUM_LIV());
+			cmd.setID(user.getID());
+			cmd.setDATE_COM(liv.getDATE_LIV());
+			cmd.setETAT_COM("paye");
+			cmd.setPAIEMENT("CAD");
+			
+			
+			cmddao.add(cmd);
+			
+			CommandeClientDAO cmdclidao=daoFactory.getInstance().createCommandeClientDAO();
+			for(int i=0;i<panierlist.size();i++) {
+				CommandeClient cmdcli=new CommandeClient();
+				cmdcli.setID_PR(panierlist.get(i).getID_PR());
+				cmdcli.setNUM_COM(cmd.getNUM_COM());
+				cmdcli.setQTE(panierqte.get(i));
+				
+				cmdclidao.add(cmdcli);
+			}
+		}
+		else {
+			// code 
+		}
 	}
 
 }
