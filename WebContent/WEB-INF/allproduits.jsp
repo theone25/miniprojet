@@ -211,26 +211,26 @@
                     	<% ArrayList<Produit> prd = (ArrayList<Produit>)request.getAttribute("allprod"+j); 
                     	if(j==0){ %>
                     		<% for(int i=0; i<prd.size();i++) { %>
-                        <div hidden class="pagination-list" class="col-lg-4 col-sm-6">
+                        <div class="pagination-list" class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
-                                <img src="img/product/<% prd.get(i).getIMG();  %>" alt="">
+                                <img src="img/product/<%= prd.get(i).getIMG()  %>" alt="">
                                 <div class="single_product_text">
-                                    <h4><% prd.get(i).getLIBELLE();  %></h4>
+                                    <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="#" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>
                         <% } %>
                     	<%} else { %>
                         <% for(int i=0; i<prd.size();i++) { %>
-                        <div class="pagination-list" class="col-lg-4 col-sm-6">
+                        <div hidden class="pagination-list" class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
-                                <img src="img/product/<% prd.get(i).getIMG();  %>" alt="">
+                                <img src="img/product/<%= prd.get(i).getIMG()  %>" alt="">
                                 <div class="single_product_text">
-                                    <h4><% prd.get(i).getLIBELLE();  %></h4>
+                                    <h4><%= prd.get(i).getLIBELLE()  %></h4>
                                     <h3><%= prd.get(i).getPRIX_UNIT()+" DH"  %></h3>
-                                    <a href="#" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
+                                    <a href="/produit?<%= prd.get(i).getID_PR() %>" class="add_cart">+AU PANIER<i class="ti-heart"></i></a>
                                 </div>
                             </div>
                         </div>

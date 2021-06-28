@@ -25,10 +25,15 @@ public class ProduitServlet extends HttpServlet {
 		DAOFactory daoFactory = DAOFactory.getInstance();
         prod = DAOFactory.getInstance().createProduitDAO();
         if(request.getQueryString()!=null && request.getQueryString()!="") {
+        	System.out.println(request.getQueryString());
         	p = prod.findProduct(Integer.parseInt(request.getQueryString()));
-            request.setAttribute("prod", p);
+            request.setAttribute("prodone", p);
+            request.getRequestDispatcher("WEB-INF/produit.jsp").forward(request, response);
         }
-		request.getRequestDispatcher("WEB-INF/produit.jsp").forward(request, response);
+        else {
+        	request.getRequestDispatcher("WEB-INF/404.jsp").forward(request, response);
+        }
+		//request.getRequestDispatcher("WEB-INF/produit.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

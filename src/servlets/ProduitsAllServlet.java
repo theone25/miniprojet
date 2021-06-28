@@ -30,7 +30,7 @@ public class ProduitsAllServlet extends HttpServlet {
         ArrayList<Categorie> cat= new ArrayList<Categorie>();
         p=prod.findall();
         ArrayList<ArrayList<Produit>> listPage=new ArrayList<ArrayList<Produit>>();
-        int numbP=(int)Math.ceil(p.size()/9);
+        int numbP=(int)Math.ceil(Double.parseDouble(String.valueOf(p.size()))/9);
         for(int i=0;i<numbP;i++) {
         	if(i==numbP-1) {
         		ArrayList<Produit> pp=new ArrayList<Produit>();
@@ -47,6 +47,7 @@ public class ProduitsAllServlet extends HttpServlet {
         for(int i=0;i<listPage.size();i++) {
         	request.setAttribute("allprod"+i, listPage.get(i));
         }
+        
         request.setAttribute("allcat", cat);
         request.setAttribute("nump", numbP);
         request.getRequestDispatcher("WEB-INF/allproduits.jsp").forward(request, response);

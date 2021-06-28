@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="beans.Categorie"%>
 <%@page import="beans.Utilisateur"%>
 <%@page import="beans.Produit"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -8,8 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Ecom | <% 
-  Produit p=(Produit) request.getAttribute("prodone"); %></title>
+<title>Ecom </title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- animate CSS -->
@@ -106,48 +107,139 @@
 				</div>
 			</div>
 		</div>
-
 	</header>
-	<!-- Header part end-->
-
-	<!--================Single Product Area =================-->
-	<div class="product_image_area section_padding">
-		<div class="container">
-			<div class="row s_product_inner justify-content-between">
-				<div class="col-lg-7 col-xl-7">
-					<div data-thumb="img/product/single-product/product_1.png">
-						<img src="img/product/<%= p.getIMG() %>" />
-					</div>
-				</div>
-				<div class="col-lg-5 col-xl-4">
-					<div class="s_product_text">
-						<h3><%= p.getLIBELLE() %></h3>
-						<h2><%= p.getPRIX_UNIT()+ " DH"%></h2>
-						<ul class="list">
-							<li><a class="active" href="#"> <span>Catégorie</span> :
-									Household
-							</a></li>
-						</ul>
-						<p>
-							<%= p.getLIBELLE() %>
-						</p>
-						<form method="POST" action="cart"
-							class="card_area d-flex justify-content-between align-items-center">
-							<div class="product_count">
-								<span class="inumber-decrement"> <i class="ti-minus"></i></span>
-								<input class="input-number" type="text" name="product_qte"
-									value="1" min="0" max="10"> <span
-									class="number-increment"> <i class="ti-plus"></i></span> <input
-									type="hidden" name="product_id" value=<%= p.getID_PR() %>>
-							</div>
-							<button type="submit"  class="btn_3">+ Au panier</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--================End Single Product Area =================-->
+	 <section class="breadcrumb breadcrumb_bg">
+	    <div class="container">
+	      <div class="row justify-content-center">
+	        <div class="col-lg-8">
+	          <div class="breadcrumb_iner">
+	            <div class="breadcrumb_iner_item">
+	              <h2>Confirmation Commande</h2>
+	              <p>Home <span>-</span> Confirmation Commande</p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	  
+	  <section class="confirmation_part padding_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="confirmation_tittle">
+            <span>Merci, Votre Commande a ete recu.</span>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>informations du commande</h4>
+            <ul>
+              <li>
+                <p>order number</p><span>: 60235</span>
+              </li>
+              <li>
+                <p>data</p><span>: Oct 03, 2017</span>
+              </li>
+              <li>
+                <p>total</p><span>: USD 2210</span>
+              </li>
+              <li>
+                <p>payment methord</p><span>: Check payments</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>Billing Address</h4>
+            <ul>
+              <li>
+                <p>Street</p><span>: 56/8</span>
+              </li>
+              <li>
+                <p>city</p><span>: Los Angeles</span>
+              </li>
+              <li>
+                <p>country</p><span>: United States</span>
+              </li>
+              <li>
+                <p>postcode</p><span>: 36952</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-lx-4">
+          <div class="single_confirmation_details">
+            <h4>shipping Address</h4>
+            <ul>
+              <li>
+                <p>Street</p><span>: 56/8</span>
+              </li>
+              <li>
+                <p>city</p><span>: Los Angeles</span>
+              </li>
+              <li>
+                <p>country</p><span>: United States</span>
+              </li>
+              <li>
+                <p>postcode</p><span>: 36952</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="order_details_iner">
+            <h3>Order Details</h3>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Product</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
+                  <th>x02</th>
+                  <th> <span>$720.00</span></th>
+                </tr>
+                <tr>
+                  <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
+                  <th>x02</th>
+                  <th> <span>$720.00</span></th>
+                </tr>
+                <tr>
+                  <th colspan="2"><span>Pixelstore fresh Blackberry</span></th>
+                  <th>x02</th>
+                  <th> <span>$720.00</span></th>
+                </tr>
+                <tr>
+                  <th colspan="3">Subtotal</th>
+                  <th> <span>$2160.00</span></th>
+                </tr>
+                <tr>
+                  <th colspan="3">shipping</th>
+                  <th><span>flat rate: $50.00</span></th>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="col" colspan="3">Quantity</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 	<!--::footer_part start::-->
 	<footer class="footer_part">
 
