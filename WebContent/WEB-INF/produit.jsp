@@ -131,16 +131,16 @@
 						<p>
 							<%= p.getLIBELLE() %>
 						</p>
-						<form method="POST" action="cart"
+						<form method="POST" action="/produit"
 							class="card_area d-flex justify-content-between align-items-center">
 							<div class="product_count">
 								<span class="inumber-decrement"> <i class="ti-minus"></i></span>
 								<input class="input-number" type="text" name="product_qte"
-									value="1" min="0" max="10"> <span
+									value="1" min="0" id="product_qte" max="20"> <span
 									class="number-increment"> <i class="ti-plus"></i></span> <input
-									type="hidden" name="product_id" value=<%= p.getID_PR() %>>
+									type="hidden" name="product_id" id="product_id" value=<%= p.getID_PR() %>>
 							</div>
-							<button type="submit"  class="btn_3">+ Au panier</button>
+							<button type="submit"   class="btn_3">+ Au panier</button>
 						</form>
 					</div>
 				</div>

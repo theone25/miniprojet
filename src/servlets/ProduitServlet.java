@@ -40,14 +40,26 @@ public class ProduitServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("session-panier")==null) {
 			ArrayList<Produit> panierlist=new ArrayList<Produit>();
+			ArrayList<Integer> panierqte=new ArrayList<Integer>();
 			panierlist.add(p);
-			
+			panierqte.add((int)request.getAttribute("product_qte"));
 			session.setAttribute("session-panier", panierlist);
+			session.setAttribute("session-panier_qte", panierqte);
+			float total=p.getPRIX_UNIT()*(int)request.getAttribute("product_qte");
+			session.setAttribute("session-panier_total", total);
 		}
 		else {
 			ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+			ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
 			panierlist.add(p);
+			panierqte.add((int)request.getAttribute("product_qte"));
 			session.setAttribute("session-panier", panierlist);
+			session.setAttribute("session-panier_qte", panierqte);
+			float total=0;
+			for(int i=0;i<panierlist.size();i++) {
+				total =total +(panierlist.get(i).getPRIX_UNIT()*panierqte.get(i));
+			}
+			session.setAttribute("session-panier_total", total);
 		}
 		
 		request.getRequestDispatcher("WEB-INF/panier.jsp").forward(request, response);

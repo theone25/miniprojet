@@ -140,6 +140,8 @@
       <div class="cart_inner">
       <%
 		ArrayList<Produit> panierlist=(ArrayList<Produit>) session.getAttribute("session-panier");
+      ArrayList<Integer> panierqte=(ArrayList<Integer>) session.getAttribute("session-panier_qte");
+      float total =(float)session.getAttribute("session-panier_total");
 		if(panierlist!=null && panierlist.size()>0)  {
 	  %>  
         <div class="table-responsive">
@@ -153,33 +155,33 @@
               </tr>
             </thead>
             <tbody>
-
+				<% for(int i=0;i<panierlist.size();i++) { %>
               <tr>
                 <td>
                   <div class="media">
                     <div class="d-flex">
-                      <img src="img/product/single-product/cart-1.jpg" alt="" />
+                      <img src="img/product/<%= panierlist.get(i).getIMG() %>" alt="" />
                     </div>
                     <div class="media-body">
-                      <p>Minimalistic shop for multipurpose use</p>
+                      <p><%= panierlist.get(i).getLIBELLE() %></p>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <h5>$360.00</h5>
+                  <h5><%= panierlist.get(i).getPRIX_UNIT() + " DH" %></h5>
                 </td>
                 <td>
                   <div class="product_count">
                     <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                    <input class="input-number" type="text" value="1" min="0" max="100">
+                    <input class="input-number" type="text" value="<%= String.valueOf(panierqte.get(i)) %>" min="0" max="100">
                     <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
                   </div>
                 </td>
                 <td>
-                  <h5>$720.00</h5>
+                  <h5><%= panierqte.get(i)*panierlist.get(i).getPRIX_UNIT() +" DH"%></h5>
                 </td>
               </tr>
-              
+              <% } %>
               <tr>
                 <td></td>
                 <td></td>
@@ -187,7 +189,7 @@
                   <h5>Total du Panier</h5>
                 </td>
                 <td>
-                  <h5>$2160.00</h5>
+                  <h5><%= total %></h5>
                 </td>
               </tr>
               <tr class="shipping_area">
