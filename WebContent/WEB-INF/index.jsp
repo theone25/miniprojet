@@ -130,16 +130,14 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">Commander</a>
+                                            <h1>Confort Maison</h1>
+                                            <p>CHAUFFE-EAU ELECTRIQUE</p>
+                                            <a href="/produit?1" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
+                                    <img src="img/product/product_1-removebg-preview.png" alt="">
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -147,16 +145,14 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Cloth & Wood
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">Commander</a>
+                                            <h1>Entretien de Maison</h1>
+                                            <p>Aspirateur </p>
+                                            <a href="/produit?1" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
+                                    <img src="img/product/product_2-removebg-preview.png" alt="">
                                 </div>
                             </div>
                         </div><div class="single_banner_slider">
@@ -164,16 +160,14 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">Commander</a>
+                                            <h1>Gros Electromenager</h1>
+                                            <p>Machine à laver séchante</p>
+                                            <a href="/produit?2" class="btn_2">Commander</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="img/banner_img.png" alt="">
+                                    <img src="img/product/product_3-removebg-preview.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -200,32 +194,33 @@
                     <div class="single_feature_post_text">
                         <p>Maison</p>
                         <h3>Confort Maison</h3>
-                        <a href="#" class="feature_btn">voir nos offres <i class="fas fa-play"></i></a>
-                        <img src="img/feature/product_1.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-5 col-sm-6">
-                    <div class="single_feature_post_text">
-                        <p>Maison</p>
-                        <h3>Entretien de Maison</h3>
-                        <a href="#" class="feature_btn">voir nos offres<i class="fas fa-play"></i></a>
-                        <img src="img/feature/product_2.png" alt="">
+                        <a href="/produits" class="feature_btn">voir nos offres <i class="fas fa-play"></i></a>
+                        <img src="img/product/product_1-removebg-preview.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5 col-sm-6">
                     <div class="single_feature_post_text">
                         <p>Electromenager</p>
                         <h3>Petit Electromenager</h3>
-                        <a href="#" class="feature_btn">voir nos offres <i class="fas fa-play"></i></a>
-                        <img src="img/feature/product_3.png" alt="">
+                        <a href="/produits" class="feature_btn">voir nos offres <i class="fas fa-play"></i></a>
+                        <img src="img/product/product_3-removebg-preview.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                    <div class="single_feature_post_text">
+                    	<p>Electromenager</p>
+                        <h3>gros Electromenager</h3>
+                        <a href="/produits" class="feature_btn">voir nos offres<i class="fas fa-play"></i></a>
+                        <img src="img/product/product_4-removebg-preview.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7 col-sm-6">
                     <div class="single_feature_post_text">
-                        <p>Electromenager</p>
-                        <h3>gros Electromenager</h3>
-                        <a href="#" class="feature_btn">voir nos offres<i class="fas fa-play"></i></a>
-                        <img src="img/feature/product_4.png" alt="">
+                    	<p>Maison</p>
+                        <h3>Entretien de Maison</h3>
+                        <a href="/produits" class="feature_btn">voir nos offres<i class="fas fa-play"></i></a>
+                        <img src="img/product/product_2-removebg-preview.png" alt="">
+                        
                     </div>
                 </div>
             </div>
@@ -252,8 +247,8 @@
                                     <div class="single_product_item">
                                         <img src="img/product/product_1.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 1</h4>
+                                            <h3>200 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
@@ -262,8 +257,8 @@
                                     <div class="single_product_item">
                                         <img src="img/product/product_2.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 2</h4>
+                                            <h3>120 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
@@ -272,8 +267,8 @@
                                     <div class="single_product_item">
                                         <img src="img/product/product_3.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 3</h4>
+                                            <h3>700 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
@@ -282,48 +277,48 @@
                                     <div class="single_product_item">
                                         <img src="img/product/product_4.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 4</h4>
+                                            <h3>350 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/product_5.png" alt="">
+                                        <img src="img/product/product_1.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 1</h4>
+                                            <h3>200 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/product_6.png" alt="">
+                                        <img src="img/product/product_2.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 2</h4>
+                                            <h3>120 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/product_7.png" alt="">
+                                        <img src="img/product/product_3.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 3</h4>
+                                            <h3>700 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/product_8.png" alt="">
+                                        <img src="img/product/product_4.png" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
+                                            <h4>produit 4</h4>
+                                            <h3>350 DH</h3>
                                             <a href="#" class="add_cart">+ Ajouter au panier<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
@@ -354,36 +349,36 @@
                         <div class="single_product_item">
                             <img src="img/product/product_1.png" alt="">
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4>produit 1</h4>
+                                            <h3>200 DH</h3>
                             </div>
                         </div>
                         <div class="single_product_item">
                             <img src="img/product/product_2.png" alt="">
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4>produit 2</h4>
+                                            <h3>120 DH</h3>
                             </div>
                         </div>
                         <div class="single_product_item">
                             <img src="img/product/product_3.png" alt="">
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4>produit 3</h4>
+                                            <h3>700 DH</h3>
                             </div>
                         </div>
                         <div class="single_product_item">
                             <img src="img/product/product_4.png" alt="">
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4>produit 4</h4>
+                                            <h3>350 DH</h3>
                             </div>
                         </div>
                         <div class="single_product_item">
-                            <img src="img/product/product_5.png" alt="">
+                            <img src="img/product/product_3.png" alt="">
                             <div class="single_product_text">
-                                <h4>Quartz Belt Watch</h4>
-                                <h3>$150.00</h3>
+                                <h4>produit 3</h4>
+                                            <h3>700 DH</h3>
                             </div>
                         </div>
                     </div>

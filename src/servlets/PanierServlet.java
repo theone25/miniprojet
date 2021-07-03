@@ -12,10 +12,6 @@ import javax.servlet.http.HttpSession;
 
 import beans.Produit;
 
-/**
- * Servlet implementation class PanierServlet
- */
-@WebServlet("/PanierServlet")
 public class PanierServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

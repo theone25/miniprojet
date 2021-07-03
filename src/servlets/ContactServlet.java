@@ -10,10 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import beans.Utilisateur;
 
-/**
- * Servlet implementation class ContactServlet
- */
-@WebServlet("/ContactServlet")
 public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

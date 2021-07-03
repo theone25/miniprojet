@@ -287,10 +287,31 @@
 				document.getElementById("contact_form").submit();
 			}
 			else{
+				// Create an instance of the Stripe object with your publishable API key
+			   /* var stripe = Stripe("pk_test_51J7PbhHxb8dJTnx5zATvIXsp6LtD0gcvt8zxuC6EhXqd2TJkZ0KkIlPK8MXbK6pUk9hClHsQBpzeydDNrUIqlCer00ATRpobA1");
 				document.getElementById("contact_form").action="/validation?stripe";
-				document.getElementById("contact_form").submit();
-			}
+				document.getElementById("contact_form").submit().then(function (response) {
+			          return response.json();
+		        })
+		        .then(function (session) {
+		          return stripe.redirectToCheckout({ sessionId: session.id });
+		        })
+		        .then(function (result) {
+		          // If redirectToCheckout fails due to a browser or network
+		          // error, you should display the localized error message to your
+		          // customer using error.message.
+		          if (result.error) {
+		            alert(result.error.message);
+		          }
+		        })
+		        .catch(function (error) {
+		          console.error("Error:", error);
+		        });
+		    });
+			}*/
 		}
+		
+	        
 	</script>
 
 	<script src="js/jquery-1.12.1.min.js"></script>
